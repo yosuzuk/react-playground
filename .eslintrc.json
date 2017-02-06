@@ -1,0 +1,11 @@
+/**
+ * Configuration file for ESLint.
+ *
+ * This file is not required for "react-scripts" but it helps IDEs.
+ *
+ * The JSON file extension is intended as ".eslintrc" without any extension is deprecated.
+ * Although this is a JSON file, ESLint also allows JavaScript-style comments.
+ */
+{
+    "extends": "react-app" // defaults to create-react-app rules (shareable config)
+}
