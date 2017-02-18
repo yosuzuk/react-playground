@@ -1,41 +1,32 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import todoApp from './reducers';
-import App from './components/App';
-import * as VisibilityFilters from './constants/visibilityFilters';
-
-const initialState = {
-    visibilityFilter: VisibilityFilters.SHOW_ALL,
-    todos: []
-};
-
-const store = createStore(
-    todoApp,
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
-const TodoAppRedux = () => (
-    <Provider store={store}>
-        <App />
-    </Provider>
-);
-
-export default TodoAppRedux;
+// public API for todoAppRedux
+export { default as TodoAppRedux } from './components/TodoAppRedux';
+export { default as TodoAppReduxIsolated } from './components/TodoAppReduxIsolated';
+export * from './actions';
+export { default as reducers } from './reducers';
 
 
-// Standalone alternative:
-//
+// This file is useful for composition:
 // 
-// import { render } from 'react-dom';
-//
 // ...
-// 
+// import { TodoAppRedux, reducers as todoReducer } from './todoAppRedux';
+// import { SomeOtherApp, reducers as otherReducer } from './someOtherApp';
+//
+// const rootReducer = combineReducers({
+//     todoAppRedux: todoReducer,
+//     someOtherApp: otherReducer
+// });
+//
+// const store = createStore(rootReducer);
+//
 // render(
 //     <Provider store={store}>
-//         <App />
+//         <TodoAppRedux />
+//         <SomeOtherApp />
 //     </Provider>,
 //     document.getElementById('root')
 // );
+// 
+//
+// Known Issue:
+// This example breaks the current "selector" function for the "todo" state sub tree (state depths changes)
 //

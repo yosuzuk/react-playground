@@ -23,3 +23,28 @@ export const setVisibilityFilter = filter => ({
         filter
     }
 });
+
+
+// Alternative implementation with named default export:
+//
+//
+// ...
+//
+// const actions = {
+//     addTodo(text) {
+//         return {
+//             type: ADD_TODO,
+//             payload: {
+//                 id: nextTodoId++,
+//                 text
+//             }
+//         };
+//     },
+//     toggleTodo(id) {
+//         ...
+//     },
+//     ...
+// };
+//
+// export default actions;
+//

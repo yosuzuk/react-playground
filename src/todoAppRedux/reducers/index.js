@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 
-const todoApp = combineReducers({
+const reducers = combineReducers({
     todos,
     visibilityFilter
 });
 
-export default todoApp;
+export default reducers;
 
 
 // Syntax alternative without named exports:
@@ -30,7 +30,7 @@ export default todoApp;
 // import { SHOW_ALL } from '../constants/visibilityFilters';
 // import { SET_VISIBILITY_FILTER, ADD_TODO, TOGGLE_TODO } from '../constants/actionTypes';
 //
-// function todoApp(state = {}, action) {
+// function reducers(state = {}, action) {
 //     switch (action.type) {
 //
 //         case SET_VISIBILITY_FILTER:
@@ -71,23 +71,5 @@ export default todoApp;
 //     }
 // }
 // 
-// export default todoApp;
+// export default reducers;
 //
-
-
-// Example state:
-//
-//
-// {
-//     visibilityFilter: 'SHOW_ALL',
-//     todos: [
-//         {
-//             text: 'Consider using Redux',
-//             completed: true,
-//         },
-//         {
-//             text: 'Keep all state in a single tree',
-//             completed: false
-//         }
-//     ]
-// }

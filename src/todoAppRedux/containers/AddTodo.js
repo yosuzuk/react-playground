@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions';
 
-let AddTodo = ({ dispatch }) => {
+export const AddTodo = ({ dispatch }) => {
     let input;
 
     return (
@@ -32,18 +32,18 @@ let AddTodo = ({ dispatch }) => {
     );
 };
 
-AddTodo = connect()(AddTodo);
-
-export default AddTodo;
+export default connect()(AddTodo);
 
 
 // Notes:
 // 
-// After using react-redux's "connect", the AddTodo gets called with the store.
-// Therefore, we can get its "dispatch" function by object destruction.
+// Using react-redux's "connect" makes the store's "dispatch" function available via props.
 // 
 // Technically, this component is a mix of presentational and container component.
 // But it's too small to be worth splitting.
+//
+// While the default export should be "connected()(AddTodo)",
+// exporting the original "AddTodo" is also helpful to have it testable without Redux.
 //
 // The "ref" attribute takes a callback,
 // that gets called with the underlying DOM element as argument when it has been drawn.
