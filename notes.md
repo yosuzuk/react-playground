@@ -131,6 +131,7 @@ General:
 React:
 
 - separate smart and dumb components (container components vs functional stateless components)
+- name all components (helps debugging)
 
 Redux:
 
