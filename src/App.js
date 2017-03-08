@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { TodoAppReduxIsolated } from './todoAppRedux';
+import HelloWorlds from './minimalExamples/components/HelloWorlds';
 
 const App = () => (
     <div className="App">
@@ -13,6 +14,7 @@ const App = () => (
         <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <HelloWorlds />
         <TodoAppReduxIsolated />
     </div>
 );
