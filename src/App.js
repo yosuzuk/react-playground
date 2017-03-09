@@ -15,7 +15,8 @@ const App = () => (
             To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <HelloWorlds />
-        <TodoAppReduxIsolated />
+        <TodoAppReduxIsolated id="todoApp1" />
+        <TodoAppReduxIsolated id="todoApp2" />
     </div>
 );
 

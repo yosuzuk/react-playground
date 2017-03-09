@@ -7,7 +7,12 @@ import TodoAppRedux from './TodoAppRedux';
 class TodoAppReduxIsolated extends Component {
   constructor(props) {
     super(props);
-    this.store = createStore(reducers);
+    this.store = createStore(
+        reducers,
+        window.devToolsExtension && window.devToolsExtension({
+            name: props.id || 'TodoAppReduxIsolated'
+        })
+    );
   }
 
   render() {
